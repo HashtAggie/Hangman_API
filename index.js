@@ -23,8 +23,8 @@ const mongo_url = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/hangman
 MongoClient.connect(mongo_url).then(function(db){
   // Connect to the db, create and register a Feathers service.
 
-  app.use('/hangman', service({
-    Model: db.collection('hangman'),
+  app.use('/games', service({
+    Model: db.collection('games'),
     paginate: {
       default: 100,
       max: 100
